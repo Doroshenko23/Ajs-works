@@ -1,4 +1,5 @@
- import Character from './domain';
+ //import Character from './domain';
+ const { default: Character } = require('./domain');
 
 class Game {
     start() {
@@ -6,15 +7,22 @@ class Game {
     }
   }
   
-  export class GameSavingData {
+  /*exsport*/class GameSavingData {
   }
   
-  export function readGameSaving() {
+  /*exsport*/function readGameSaving() {
   }
   
-  export function writeGameSaving() {
+  /*exsport*/function writeGameSaving() {
   }
 
-  export default Game;
+  //export default Game;
 
- 
+  module.exports = {
+    GameSavingData, 
+    saveGame: readGameSaving ,
+    loadGame: writeGameSaving,
+    default: Game
+  } 
+
+  
